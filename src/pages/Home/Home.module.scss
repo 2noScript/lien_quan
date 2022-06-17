@@ -1,0 +1,22 @@
+.wrapper {
+  position: relative;
+}
+.slide {
+  width: 100%;
+  cursor: pointer;
+}
+.slide-item {
+  width: 100%;
+}
+
+.download {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: var(--z-low);
+  width: 520px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 40px;
+}

@@ -1,0 +1,12 @@
+.wrapper {
+  position: relative;
+}
+.content {
+  // background-color: aqua;
+  margin-top: calc(60px - 156px);
+}
+.warning {
+  position: fixed;
+  top: 20px;
+  z-index: var(--z-hight);
+}

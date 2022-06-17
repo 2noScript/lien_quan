@@ -1,0 +1,31 @@
+.wrapper {
+  height: 445px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--footer-color);
+}
+.address {
+  padding-top: 15px;
+  padding-left: 16px;
+  padding-right: 16px;
+  border-top: 1px solid #333;
+}
+
+.address p {
+  text-align: center;
+  line-height: 1.6em;
+  color: var(--white);
+}
+
+.rule {
+  margin-top: 16px;
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rule a {
+  color: #3372b2;
+}
