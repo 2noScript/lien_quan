@@ -7,27 +7,27 @@ import bg_nav_top from "./bg-nav-top.png";
 //package
 import classNames from "classnames/bind";
 import styles from "./Header.module.scss";
-
+import routesConfig from "~/configs/routes";
 const cx = classNames.bind(styles);
 const navLeft = [
   {
     name: "trang chủ",
-    url: "",
+    url: routesConfig.home,
   },
   {
     name: "tin tức",
-    url: "",
+    url: routesConfig.news,
   },
   {
     name: "học viện",
-    url: "",
+    url: routesConfig.introduce,
   },
 ];
 
 const navRight = [
   {
     name: "giftcode",
-    url: "",
+    url: routesConfig.giftcode,
   },
   {
     name: "tài khoản",
