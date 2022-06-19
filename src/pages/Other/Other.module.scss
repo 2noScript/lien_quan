@@ -1,0 +1,26 @@
+$padding-left-right: 174px;
+$min-w-menu: 750px;
+.wrapper {
+  border-top: 2px solid #ae903b;
+  height: 1000px;
+  background-color: var(--primary);
+  padding: 0px $padding-left-right;
+}
+.w-menu {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: $min-w-menu;
+  width: $min-w-menu;
+}
+.content {
+  background-color: white;
+}

@@ -2,12 +2,14 @@
 import Image from "cpm/Image";
 //images
 import logoFooter from "img/defaultLayout/logo-footer.png";
+import line from "./line.png";
 import classNames from "classnames/bind";
 import styles from "./Footer.module.scss";
 const cx = classNames.bind(styles);
 function Footer() {
   return (
     <div className={cx("wrapper")}>
+      <Image src={line} className={cx("line")} />
       <Image src={logoFooter} width={624} height={111} />
       <div className={cx("address")}>
         <p>
