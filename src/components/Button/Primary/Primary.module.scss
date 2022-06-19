@@ -29,3 +29,11 @@ $bg-color: #d8d1bc;
   background-color: transparent;
   color: var(--white);
 }
+
+.wrapper.active {
+  background-image: url("./btn-active.png") !important;
+  .content {
+    font-weight: bold;
+    color: var(--black);
+  }
+}

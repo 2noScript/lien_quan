@@ -1,0 +1,30 @@
+.wrapper {
+  height: 180px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0 4px;
+}
+.img {
+  border: 1px solid #ae903b;
+  cursor: pointer;
+}
+.content {
+  flex: 1;
+  padding: 16px 24px;
+  height: 100%;
+}
+.title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #cfc39b;
+  cursor: pointer;
+}
+.date {
+  color: #808285;
+}
+.description {
+  margin-top: 8px;
+  color: #75648c;
+  font-size: 1.6rem;
+}

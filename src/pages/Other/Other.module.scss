@@ -2,8 +2,6 @@ $padding-left-right: 174px;
 $min-w-menu: 750px;
 .wrapper {
   border-top: 2px solid #ae903b;
-  height: 1000px;
-  background-color: var(--primary);
   padding: 0px $padding-left-right;
 }
 .w-menu {
@@ -22,5 +20,31 @@ $min-w-menu: 750px;
   width: $min-w-menu;
 }
 .content {
-  background-color: white;
+  // background-color: white;
+  // padding-top: -80px;
+}
+.btn-wrapper {
+  height: 40px;
+  // background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.more {
+  // background-color: aqua;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  color: #ffe291;
+}
+.more-ico {
+  height: 40px;
+  width: 40px;
+  background-repeat: no-repeat;
+  background-image: url(../../images/more/icon-detail.png);
+  background-position: center;
 }

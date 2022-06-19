@@ -7,7 +7,6 @@ function App() {
       <Routes>
         {publicRoutes.map((route, index) => {
           const Page = route.component;
-          console.log(index);
           const Layout = route.layout;
           return (
             <Route
