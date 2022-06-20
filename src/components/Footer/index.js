@@ -1,3 +1,4 @@
+import { memo } from "react";
 //components
 import Image from "cpm/Image";
 //images
@@ -43,4 +44,4 @@ function Footer() {
   );
 }
 
-export default Footer;
+export default memo(Footer);

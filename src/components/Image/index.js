@@ -1,3 +1,4 @@
+import { memo } from "react";
 import classNames from "classnames/bind";
 import styles from "./Image.module.scss";
 import noImage from "./noImage.png";
@@ -63,4 +64,4 @@ function Image(props) {
   );
 }
 
-export default Image;
+export default memo(Image);

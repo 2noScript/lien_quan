@@ -2,7 +2,7 @@
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper";
-
+import { memo } from "react";
 //components
 import Image from "cpm/Image";
 import { Link } from "react-router-dom";
@@ -76,4 +76,4 @@ function Home({ children }) {
   );
 }
 
-export default Home;
+export default memo(Home);

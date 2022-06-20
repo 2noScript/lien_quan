@@ -1,8 +1,6 @@
-//components
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper";
-
+import { memo } from "react";
 //components
 import Image from "cpm/Image";
 import { Link } from "react-router-dom";
@@ -20,12 +18,10 @@ const cx = classNames.bind(styles);
 
 function Other({ children }) {
   const [data] = useRequest("get", "slide?type=2");
-  // console.log(data);
   return (
     <div className={cx("wrapper")}>
       {data && (
         <Swiper
-          // pagination={true}
           className={cx("slide")}
           spaceBetween={0}
           slidesPerView={1}
@@ -56,4 +52,4 @@ function Other({ children }) {
   );
 }
 
-export default Other;
+export default memo(Other);

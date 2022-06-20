@@ -1,12 +1,11 @@
 //hooks
 import { useRequest } from "~/hooks";
-import { useState, useEffect, Fragment, useRef } from "react";
+import { useState, useEffect, Fragment, memo } from "react";
 import { useLocation } from "react-router-dom";
-import { instance } from "~/hooks/useRequest";
 import Separator from "cpm/Separator";
 //components
 
-import { ButtonPrimary } from "cpm/Button";
+import { ButtonPrimary, ButtonMore } from "cpm/Button";
 import PostCard from "cpm/PostCard";
 //style
 import { menu, a_type } from "./option.js";
@@ -18,23 +17,35 @@ function Other() {
   const { pathname } = useLocation();
   const [url, setUrl] = useState(localStorage.getItem("postUrl"));
   const [limit, setLimit] = useState(7);
-
-  const [data] = useRequest("get", `${url}`, {
-    params: {
-      _limit: limit,
-    },
-  });
-
+  const [data, setData] = useState();
+  const [res] = useRequest("get", `${url}`);
   useEffect(() => {
     localStorage.setItem("postUrl", url);
   }, [url]);
+  const handleMore = () => {
+    if (limit >= res.length) return;
+    setLimit(limit + 7);
+  };
   useEffect(() => {
-    a_type.map((item) => {
-      if (item.path === pathname) setUrl(`/posts?type=${item.type}`);
-    });
-    if (pathname === "/tin-tuc") {
-      setUrl("/posts");
+    if (res) {
+      // console.log(res);
+      if (limit < res.length) {
+        setData(res.slice(0, limit - 1));
+      } else {
+        setData(res);
+      }
     }
+  }, [limit, res]);
+  useEffect(() => {
+    if (pathname === "/tin-tuc") {
+      setUrl(`/posts`);
+      return;
+    }
+    a_type.map((item) => {
+      if (item.path === pathname) {
+        setUrl(`/posts?type=${item.type}`);
+      }
+    });
   }, [pathname]);
   return (
     <div className={cx("wrapper")}>
@@ -50,7 +61,13 @@ function Other() {
                 </div>
               );
             return (
-              <div className={cx("menu-item")} key={index}>
+              <div
+                className={cx("menu-item")}
+                key={index}
+                onClick={() => {
+                  setLimit(7);
+                }}
+              >
                 <ButtonPrimary url={item.link}>{item.name}</ButtonPrimary>
               </div>
             );
@@ -62,24 +79,17 @@ function Other() {
           data.map((item, index) => {
             return (
               <Fragment key={index}>
-                {item.id > 0 && (
-                  <>
-                    <PostCard data={item} />
-                    <Separator />
-                  </>
-                )}
+                <PostCard data={item} />
+                <Separator />
               </Fragment>
             );
           })}
       </div>
       <div className={cx("btn-wrapper")}>
-        <div className={cx("more")}>
-          <span>xem thêm</span>
-          <span className={cx("more-ico")}></span>
-        </div>
+        {res && limit < res.length && <ButtonMore onClick={handleMore} />}
       </div>
     </div>
   );
 }
 
-export default Other;
+export default memo(Other);

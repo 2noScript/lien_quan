@@ -1,0 +1,17 @@
+.more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  color: #ffe291;
+}
+.more-ico {
+  height: 40px;
+  width: 40px;
+  background-repeat: no-repeat;
+  //   background-image: url(../../images/more/icon-detail.png);
+  background-image: url(../../../images/more/icon-detail.png);
+  background-position: center;
+}

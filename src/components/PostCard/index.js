@@ -1,3 +1,4 @@
+import { memo } from "react";
 import classNames from "classnames/bind";
 import Image from "cpm/Image";
 
@@ -27,4 +28,4 @@ function PostCard({ data }) {
   );
 }
 
-export default PostCard;
+export default memo(PostCard);

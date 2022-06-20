@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { memo } from "react";
 import classNames from "classnames/bind";
 import bg from "./btn.png";
 import styles from "./Primary.module.scss";
@@ -16,4 +17,4 @@ function Primary({ children, url = "#", active }) {
   );
 }
 
-export default Primary;
+export default memo(Primary);

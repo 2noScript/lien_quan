@@ -1,8 +1,39 @@
 .wrapper {
-  // position: relative;
-  padding-top: 200px;
-  padding-left: 200px;
+  // padding-top: 200px;
+  // padding-left: 200px;
   height: 1000px;
-  background-color: var(--primary);
-  // background-color: white;
+}
+.padding-layout {
+  padding: 0 var(--padding-left-right);
+}
+
+.news {
+}
+
+.card-main {
+  padding: 0 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card-sub {
+  margin-top: 40px;
+  display: flex;
+  padding: 0 8px;
+  justify-content: space-between;
+}
+.card-sub-col {
+  display: flex;
+  justify-content: space-between;
+  width: 564px;
+}
+.title {
+  text-transform: uppercase;
+  color: var(--text-primary);
+  font-weight: bold;
+  font-size: 3.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
 }

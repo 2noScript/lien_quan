@@ -5,7 +5,7 @@ import Footer from "cpm/Footer";
 //image
 import warning from "img/defaultLayout/warning.jpg";
 //package
-
+import { memo } from "react";
 import classNames from "classnames/bind";
 import styles from "./Default.module.scss";
 
@@ -21,4 +21,4 @@ function Default({ children }) {
   );
 }
 
-export default Default;
+export default memo(Default);

@@ -1,3 +1,4 @@
+import { memo } from "react";
 import classNames from "classnames/bind";
 import styles from "./Separator.module.scss";
 const cx = classNames.bind(styles);
@@ -9,4 +10,4 @@ function Separator() {
   );
 }
 
-export default Separator;
+export default memo(Separator);

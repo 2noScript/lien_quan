@@ -1,10 +1,10 @@
-//components
-
+import { memo } from "react";
 //components
 import { Link } from "react-router-dom";
-import { ButtonPrimary } from "cpm/Button";
-//hooks
+import { CardOne, CardTwo } from "cpm/Card";
 
+//hooks
+import { useRequest } from "~/hooks";
 //images
 // Import Swiper styles
 import "swiper/css";
@@ -14,11 +14,31 @@ import styles from "./Home.module.scss";
 
 const cx = classNames.bind(styles);
 function Home() {
+  const [data] = useRequest("get", "/posts/5");
+  console.log(data);
   return (
     <div className={cx("wrapper")}>
-      <ButtonPrimary>tất cả</ButtonPrimary>
+      <div className={cx("news", "padding-layout")}>
+        <div className={cx("title")}>tin tức mới nhất</div>
+        <div className={cx("card-main")}>
+          <CardOne data={data} />
+          <CardOne data={data} />
+        </div>
+        <div className={cx("card-sub")}>
+          <div className={cx("card-sub-col")}>
+            <CardTwo />
+            <CardTwo />
+          </div>
+          <div className={cx("card-sub-col")}>
+            <CardTwo />
+            <CardTwo />
+          </div>
+        </div>
+      </div>
+      <div className={cx("free-general")}></div>
+      <div className={cx("")}></div>
     </div>
   );
 }
 
-export default Home;
+export default memo(Home);

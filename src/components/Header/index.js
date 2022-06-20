@@ -1,3 +1,4 @@
+import { memo } from "react";
 //components
 import { Link } from "react-router-dom";
 // image
@@ -70,4 +71,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default memo(Header);

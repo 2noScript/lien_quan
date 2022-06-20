@@ -1,0 +1,16 @@
+//default 1:1
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  background-color: red;
+  padding-top: 100%;
+
+  .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+}

@@ -1,0 +1,33 @@
+$color-border: #ae903b;
+.wrapper {
+  border: 1px solid $color-border;
+  cursor: pointer;
+  width: 564px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+.title {
+  width: 100%;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  border: 1px solid $color-border;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  padding: 0 8px;
+}
+.title p {
+  padding: 0;
+  background-color: aliceblue;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: var(--text-primary);
+  font-weight: bold;
+}
+.img {
+  width: 100% !important;
+}
