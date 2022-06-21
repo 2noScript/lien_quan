@@ -6,6 +6,7 @@ import { memo } from "react";
 //components
 import Image from "cpm/Image";
 import { Link } from "react-router-dom";
+import Loading from "cpm/Loading";
 //hooks
 
 import { useRequest } from "~/hooks";
@@ -32,12 +33,12 @@ const download = [
 ];
 function Home({ children }) {
   const [data] = useRequest("get", "slide?type=1");
-  // console.log(data);
   return (
     <div className={cx("wrapper")}>
-      {data && (
+      {!data ? (
+        <Loading />
+      ) : (
         <Swiper
-          // pagination={true}
           className={cx("slide")}
           spaceBetween={0}
           slidesPerView={1}

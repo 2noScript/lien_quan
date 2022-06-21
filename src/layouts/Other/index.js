@@ -4,6 +4,8 @@ import { memo } from "react";
 //components
 import Image from "cpm/Image";
 import { Link } from "react-router-dom";
+import Loading from "cpm/Loading";
+
 //hooks
 
 import { useRequest } from "~/hooks";
@@ -20,7 +22,9 @@ function Other({ children }) {
   const [data] = useRequest("get", "slide?type=2");
   return (
     <div className={cx("wrapper")}>
-      {data && (
+      {!data ? (
+        <Loading />
+      ) : (
         <Swiper
           className={cx("slide")}
           spaceBetween={0}

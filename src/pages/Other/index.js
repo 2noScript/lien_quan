@@ -3,6 +3,7 @@ import { useRequest } from "~/hooks";
 import { useState, useEffect, Fragment, memo } from "react";
 import { useLocation } from "react-router-dom";
 import Separator from "cpm/Separator";
+import Loading from "cpm/Loading";
 //components
 
 import { ButtonPrimary, ButtonMore } from "cpm/Button";
@@ -75,7 +76,9 @@ function Other() {
         </div>
       </div>
       <div className={cx("content")}>
-        {data &&
+        {!data ? (
+          <Loading />
+        ) : (
           data.map((item, index) => {
             return (
               <Fragment key={index}>
@@ -83,7 +86,8 @@ function Other() {
                 <Separator />
               </Fragment>
             );
-          })}
+          })
+        )}
       </div>
       <div className={cx("btn-wrapper")}>
         {res && limit < res.length && <ButtonMore onClick={handleMore} />}

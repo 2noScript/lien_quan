@@ -5,6 +5,7 @@ import {
   useWindowWidth,
   useWindowHeight,
 } from "@react-hook/window-size";
+import { CardTwo } from "cpm/Card";
 function App() {
   const [width, height] = useWindowSize();
   const onlyWidth = useWindowWidth();

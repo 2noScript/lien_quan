@@ -1,6 +1,4 @@
 .wrapper {
-  // padding-top: 200px;
-  // padding-left: 200px;
   height: 1000px;
 }
 .padding-layout {
@@ -8,24 +6,6 @@
 }
 
 .news {
-}
-
-.card-main {
-  padding: 0 8px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.card-sub {
-  margin-top: 40px;
-  display: flex;
-  padding: 0 8px;
-  justify-content: space-between;
-}
-.card-sub-col {
-  display: flex;
-  justify-content: space-between;
-  width: 564px;
 }
 .title {
   text-transform: uppercase;
@@ -36,4 +16,29 @@
   justify-content: center;
   align-items: center;
   padding: 50px 0;
+}
+.card-main {
+  padding: 0 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-sub {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  justify-content: center;
+}
+.card-sub-col {
+  display: flex;
+  justify-content: center;
+  width: 564px;
+  & + .card-sub-col {
+    margin-left: 32px;
+  }
+}
+
+.btn-more {
+  padding: 36px 0;
 }

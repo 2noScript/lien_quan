@@ -2,7 +2,9 @@ import { memo } from "react";
 //components
 import { Link } from "react-router-dom";
 import { CardOne, CardTwo } from "cpm/Card";
-
+import { ButtonMore, ButtonAvatar } from "cpm/Button";
+import Loading from "cpm/Loading";
+import SeparatorLine from "cpm/SeparatorLine";
 //hooks
 import { useRequest } from "~/hooks";
 //images
@@ -15,7 +17,6 @@ import styles from "./Home.module.scss";
 const cx = classNames.bind(styles);
 function Home() {
   const [data] = useRequest("get", "/posts/5");
-  console.log(data);
   return (
     <div className={cx("wrapper")}>
       <div className={cx("news", "padding-layout")}>
@@ -34,9 +35,17 @@ function Home() {
             <CardTwo />
           </div>
         </div>
+        <div className={cx("btn-more")}>
+          <Link to="/tin-tuc">
+            <ButtonMore />
+          </Link>
+        </div>
       </div>
-      <div className={cx("free-general")}></div>
-      <div className={cx("")}></div>
+      <SeparatorLine />
+      <div className={cx("free-general")}>
+        <ButtonAvatar src={null} />
+      </div>
+      <div className={cx("")}>{/* <Loading /> */}</div>
     </div>
   );
 }
