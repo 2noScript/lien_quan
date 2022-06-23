@@ -1,18 +1,17 @@
-import Image from "cpm/Image";
+/* eslint-disable jsx-a11y/alt-text */
 import classNames from "classnames/bind";
-import styles from "./Button.module.scss";
+import { memo } from "react";
+import styles from "./Avatar.module.scss";
 const cx = classNames.bind(styles);
 const border = "https://lienquan.garena.vn/asset/images/tab-default-hv.png";
-const link =
-  "https://lienquan.garena.vn/files/free_champions/67bd01ee2708589e83cf48a670bb15255d63c592846d4.png";
-function Avatar({ src }) {
-  console.log("xx");
+
+function Avatar({ src, onClick }) {
   return (
-    <div className={cx("wrapper")}>
+    <div className={cx("wrapper")} onClick={onClick}>
       <img src={border} className={cx("border")} />
-      <img src={link} className={cx("avatar")} />
+      <img src={src} className={cx("avatar")} />
     </div>
   );
 }
 
-export default Avatar;
+export default memo(Avatar);

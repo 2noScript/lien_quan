@@ -1,0 +1,24 @@
+.wrapper {
+  width: 100%;
+  position: relative;
+}
+.select {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+}
+
+.bg {
+  animation: visible 1s ease 1s;
+}
+
+@keyframes visible {
+  from {
+    visibility: hidden;
+  }
+  to {
+    visibility: visible;
+  }
+}

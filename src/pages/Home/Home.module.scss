@@ -1,5 +1,4 @@
 .wrapper {
-  height: 1000px;
 }
 .padding-layout {
   padding: 0 var(--padding-left-right);
@@ -39,6 +38,17 @@
   }
 }
 
+.free-general {
+  background-image: url(../../images/home/bg-cham.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.config {
+  background-image: url(../../images/home/bg-down.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .btn-more {
   padding: 36px 0;
 }
