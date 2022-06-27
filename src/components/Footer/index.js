@@ -13,7 +13,8 @@ function Footer() {
     <>
       <SeparatorLine />
       <div className={cx("wrapper")}>
-        <Image src={logoFooter} width={624} height={111} />
+        {/* <Image src={logoFooter} width={624} height={111} /> */}
+        <Image src={logoFooter} className={cx("logo-footer")} width={"100%"} />
         <div className={cx("address")}>
           <p>
             CÔNG TY CỔ PHẦN GIẢI TRÍ VÀ THỂ THAO ĐIỆN TỬ VIỆT NAM

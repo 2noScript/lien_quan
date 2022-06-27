@@ -5,17 +5,9 @@ import {
   useWindowWidth,
   useWindowHeight,
 } from "@react-hook/window-size";
+import { useDesktop, useLaptop } from "./hooks";
 import { CardTwo } from "cpm/Card";
 function App() {
-  const [width, height] = useWindowSize();
-  const onlyWidth = useWindowWidth();
-  const onlyHeight = useWindowHeight();
-  console.log({
-    width,
-    height,
-    onlyWidth,
-    onlyHeight,
-  });
   return (
     <div className="App">
       <Routes>

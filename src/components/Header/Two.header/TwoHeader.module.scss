@@ -1,0 +1,94 @@
+@import "../../../global/mediaQuery.scss";
+
+
+.wrapper {
+  width: 100%;
+  position: sticky;
+  z-index: var(--z-medium);
+  top: 0;
+  left: 0;
+  @include mobile {
+    height: 60px;
+    .logo {
+      height: 56px;
+      width: 56px;
+      left: 8px;
+    }
+  }
+  @include tablet {
+    height: 72px;
+    .logo {
+      height: 66px;
+      width: 66px;
+      left: 16px;
+    }
+  }
+}
+
+.logo {
+  z-index: var(--z-medium);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.down-game {
+  height: auto;
+  width: 25%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: var(--z-medium);
+  right: 8px;
+}
+.lienQuan {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 80px;
+  h2 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+  }
+  h3 {
+    font-size: 1rem;
+    text-transform: capitalize;
+    font-weight: 400;
+  }
+  flex: 80%;
+  color: var(--white);
+}
+.nav {
+  position: fixed;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // background-color: aqua;
+  bottom: 0;
+  left: 0;
+  z-index: var(--z-medium);
+}
+
+.nav-item {
+  flex: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 4px 0;
+  border-radius: 4px;
+  span {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    color: var(--white);
+    margin-top: 2px;
+  }
+}
+.active {
+  background-color: #2a256c;
+}
+.icon {
+  height: 32px;
+  width: 32px;
+}

@@ -1,12 +1,26 @@
+@import "../../global/mediaQuery.scss";
 .wrapper {
   position: relative;
   background-color: var(--primary);
 }
 .content {
-  margin-top: calc(60px - 156px);
+  @include desktop {
+    margin-top: calc(60px - 156px);
+  }
+  @include laptop {
+    margin-top: calc(60px - 156px);
+  }
+  @include mobile {
+    margin-top: 0;
+  }
+  @include tablet {
+    margin-top: 0;
+  }
 }
+
 .warning {
   position: fixed;
-  top: 20px;
+  top: 60px;
+  display: none;
   z-index: var(--z-hight);
 }

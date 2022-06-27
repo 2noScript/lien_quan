@@ -2,7 +2,9 @@
 $min-w-menu: 750px;
 .wrapper {
   border-top: 2px solid #ae903b;
-  padding: 0px var(--padding-left-right);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 .w-menu {
   width: 100%;
@@ -20,12 +22,15 @@ $min-w-menu: 750px;
   width: $min-w-menu;
 }
 .content {
-  // background-color: white;
-  // padding-top: -80px;
+  max-width: var(--max-w-app);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  display: none; //fix
 }
 .btn-wrapper {
   height: 40px;
-  // background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;

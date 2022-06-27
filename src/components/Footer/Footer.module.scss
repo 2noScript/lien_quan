@@ -6,6 +6,15 @@
   justify-content: center;
   align-items: center;
   background-color: var(--footer-color);
+  padding: 0 8px;
+  height: 2000px;
+}
+.logo-footer {
+  // padding: 0 20px;
+  img {
+    object-fit: scale-down;
+    aspect-ratio: 9/16;
+  }
 }
 .address {
   padding-top: 15px;

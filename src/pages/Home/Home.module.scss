@@ -1,54 +1,48 @@
+@import "../../global/mediaQuery.scss";
+$text-color-title: var(--text-primary);
+$layout-padding: 16px;
+$border-color: var(--gold);
 .wrapper {
-}
-.padding-layout {
-  padding: 0 var(--padding-left-right);
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  // flex-direction: column;
 }
 
-.news {
-}
 .title {
+  color: $text-color-title;
   text-transform: uppercase;
-  color: var(--text-primary);
   font-weight: bold;
-  font-size: 3.6rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 50px 0;
+  text-align: center;
 }
-.card-main {
-  padding: 0 8px;
+
+.new-w {
+  width: 100%;
+  background-color: aliceblue;
   display: flex;
   align-items: center;
-  justify-content: center;
+  flex-wrap: wrap;
 }
-.card-sub {
-  margin-top: 40px;
-  display: flex;
-  align-items: center;
-  padding: 0 8px;
-  justify-content: center;
+.default-layout {
+  padding: $layout-padding $layout-padding;
 }
-.card-sub-col {
-  display: flex;
-  justify-content: center;
-  width: 564px;
-  & + .card-sub-col {
-    margin-left: 32px;
+.card-one {
+  border: 1px solid $border-color;
+  height: 200px;
+  width: 100%;
+  // height: auto;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  & + .card-one {
+    margin-top: 20px;
   }
-}
-
-.free-general {
-  background-image: url(../../images/home/bg-cham.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.config {
-  background-image: url(../../images/home/bg-down.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.btn-more {
-  padding: 36px 0;
+  p {
+    padding: 0;
+    background-color: aliceblue;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: var(--text-primary);
+    font-weight: bold;
+  }
 }

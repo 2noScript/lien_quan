@@ -12,6 +12,7 @@
   --footer-color: #160e1e;
   //default layout
   --padding-left-right: 174px;
+  --max-w-app: 1200px;
   //hover
 
   //font-name
@@ -54,4 +55,22 @@ div {
 img {
   vertical-align: middle;
   border: none;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+
+  &-track {
+    background: transparent;
+  }
+
+  &-thumb {
+    background: #888;
+    border-radius: 10px;
+    z-index: 100;
+
+    &:hover {
+      background: #555;
+    }
+  }
 }

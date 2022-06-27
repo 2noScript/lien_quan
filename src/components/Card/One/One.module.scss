@@ -2,18 +2,12 @@ $color-border: #ae903b;
 .wrapper {
   border: 1px solid $color-border;
   cursor: pointer;
-  width: 564px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   overflow: hidden;
-  & + .wrapper {
-    margin-left: 32px;
-  }
+  background-color: aqua;
 }
 
 .title {
-  width: 100%;
+  // width: 100%;
   height: 46px;
   display: flex;
   align-items: center;
@@ -33,5 +27,6 @@ $color-border: #ae903b;
   font-weight: bold;
 }
 .img {
-  // width: 100% !important;
+  width: 100%;
+  height: 100px;
 }

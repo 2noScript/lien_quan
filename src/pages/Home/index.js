@@ -2,7 +2,8 @@ import { memo } from "react";
 //components
 import { Link } from "react-router-dom";
 import { CardOne, CardTwo } from "cpm/Card";
-import { ButtonMore, ButtonAvatar } from "cpm/Button";
+import { ButtonMore } from "cpm/Button";
+import Image from "cpm/Image";
 import SeparatorLine from "cpm/SeparatorLine";
 import Loading from "cpm/Loading";
 import FreeGeneral from "./FreeGeneral";
@@ -23,38 +24,26 @@ function Home() {
   if (!!(data && dataFreeGeneral))
     return (
       <div className={cx("wrapper")}>
-        <div className={cx("news", "padding-layout")}>
+        <div className={cx("news")}>
           <div className={cx("title")}>tin tức mới nhất</div>
-          <div className={cx("card-main")}>
-            <CardOne data={data} />
-            <CardOne data={data} />
-          </div>
-          <div className={cx("card-sub")}>
-            <div className={cx("card-sub-col")}>
-              <CardTwo />
-              <CardTwo />
+          <div className={cx("news-w", "default-layout")}>
+            <div
+              className={cx("card-one")}
+              style={{ backgroundImage: `url(${data.img})` }}
+            >
+              <p>{data.title}</p>
             </div>
-            <div className={cx("card-sub-col")}>
-              <CardTwo />
-              <CardTwo />
+            <div
+              className={cx("card-one")}
+              style={{ backgroundImage: `url(${data.img})` }}
+            ></div>
+            <div>
+              <CardTwo data={data} className={cx("card-two")} />
+              <CardTwo data={data} className={cx("card-two")} />
+              <CardTwo data={data} className={cx("card-two")} />
+              <CardTwo data={data} className={cx("card-two")} />
             </div>
           </div>
-          <div className={cx("btn-more")}>
-            <Link to="/tin-tuc">
-              <ButtonMore />
-            </Link>
-          </div>
-        </div>
-        <SeparatorLine />
-        <div className={cx("free-general", "padding-layout")}>
-          <div className={cx("title")}>tướng miễn phí tuần</div>
-          <FreeGeneral data={dataFreeGeneral} />
-        </div>
-        <SeparatorLine />
-
-        <div className={cx("config")}>
-          <image src={imgDown} />
-          <div className={cx("title")}>yêu cầu cấu hình thiết bị</div>
         </div>
       </div>
     );

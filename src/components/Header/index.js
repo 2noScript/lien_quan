@@ -1,15 +1,12 @@
-import { memo } from "react";
 //components
-import { Link } from "react-router-dom";
+import One from "./One.header";
+import Two from "./Two.header";
 // image
-import logo_new from "./logo-new.png";
-import bg_nav_top from "./bg-nav-top.png";
 
 //package
-import classNames from "classnames/bind";
-import styles from "./Header.module.scss";
+
+//hooks
 import routesConfig from "~/configs/routes";
-const cx = classNames.bind(styles);
 const navLeft = [
   {
     name: "trang chủ",
@@ -21,7 +18,8 @@ const navLeft = [
   },
   {
     name: "học viện",
-    url: routesConfig.introduce,
+    // url: routesConfig.introduce,
+    url: "/",
   },
 ];
 
@@ -32,43 +30,18 @@ const navRight = [
   },
   {
     name: "tài khoản",
-    url: "",
+    url: "/",
   },
   {
     name: "hợp tác",
-    url: "",
+    url: "/",
   },
 ];
-function Header() {
-  return (
-    <div
-      className={cx("wrapper")}
-      style={{
-        backgroundImage: `url(${bg_nav_top})`,
-      }}
-    >
-      <div
-        className={cx("logo")}
-        style={{ backgroundImage: `url(${logo_new})` }}
-      ></div>
-      <div className={cx("navbar")}>
-        <div className={cx("left")}>
-          {navLeft.map((item, index) => (
-            <Link to={item.url} key={index} className={cx("item")}>
-              <div>{item.name}</div>
-            </Link>
-          ))}
-        </div>
-        <div className={cx("right")}>
-          {navRight.map((item, index) => (
-            <Link to={item.url} key={index} className={cx("item")}>
-              <div>{item.name}</div>
-            </Link>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
+function HeaderOne() {
+  return <One data={{ navLeft, navRight }} />;
 }
 
-export default memo(Header);
+function HeaderTwo() {
+  return <Two data={{ navLeft, navRight }} />;
+}
+export { HeaderOne, HeaderTwo };
