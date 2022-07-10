@@ -21,6 +21,7 @@ function FreeGeneral({ data }) {
           data.map((item, index) => {
             return (
               <ButtonAvatar
+                className={cx(`avatar-btn-${index}`, "avatar-btn")}
                 src={item.avatar}
                 key={index}
                 onClick={() => {

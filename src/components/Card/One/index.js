@@ -1,6 +1,7 @@
 import classNames from "classnames/bind";
 import styles from "./One.module.scss";
 import Image from "cpm/Image";
+import AspectRatio from "cpm/AspectRatio";
 import { memo } from "react";
 const cx = classNames.bind(styles);
 function One({ data, className }) {
@@ -12,11 +13,12 @@ function One({ data, className }) {
             [className]: className,
           })}
         >
-          <Image src={data.img} className={cx("img")}>
-            <div className={cx("title")}>
-              <p>{data.title}</p>
-            </div>
-          </Image>
+          <AspectRatio ratio="46.67%">
+            <div
+              className={cx("bg")}
+              style={{ backgroundImage: `url(${data.img})` }}
+            ></div>
+          </AspectRatio>
         </div>
       )}
     </>

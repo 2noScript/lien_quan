@@ -3,7 +3,4 @@ $color-border: #ae903b;
   overflow: hidden;
   border: 1px solid $color-border;
   width: 48%;
-  & + .wrapper {
-    margin-left: 32px;
-  }
 }

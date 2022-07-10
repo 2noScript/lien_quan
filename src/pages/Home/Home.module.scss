@@ -3,10 +3,64 @@ $text-color-title: var(--text-primary);
 $layout-padding: 16px;
 $border-color: var(--gold);
 .wrapper {
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
-  // flex-direction: column;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  @include mobile {
+  }
+  @include tablet {
+    .title {
+      font-size: 1.6rem;
+    }
+    .news {
+      .news-content {
+        width: 100%;
+      }
+      .row-1 {
+        flex-direction: column;
+        width: 100%;
+        .card-one {
+          width: 100%;
+        }
+      }
+      .row-2 {
+        display: none;
+      }
+    }
+    .free-general {
+      display: none;
+    }
+    .config {
+      display: none;
+    }
+    .more-btn {
+      display: none !important;
+    }
+  }
+  @include laptop {
+    .news {
+      .news-content {
+        max-width: var(--max-w-app);
+        width: auto;
+        padding: 0 16px;
+      }
+    }
+    .free-general {
+      .chams {
+        width: auto;
+        max-width: var(--max-w-app);
+      }
+    }
+    .config {
+      &-content {
+        width: auto;
+        max-width: var(--max-w-app);
+
+        margin: 0px 16px;
+      }
+    }
+  }
 }
 
 .title {
@@ -14,35 +68,110 @@ $border-color: var(--gold);
   text-transform: uppercase;
   font-weight: bold;
   text-align: center;
+  font-size: 3.6rem;
+  padding: 36px 0;
+}
+.news-content {
+  width: var(--max-w-app);
 }
 
-.new-w {
-  width: 100%;
-  background-color: aliceblue;
+.news,
+.free-general,
+.config {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
+  flex-direction: column;
 }
-.default-layout {
-  padding: $layout-padding $layout-padding;
-}
-.card-one {
-  border: 1px solid $border-color;
-  height: 200px;
-  width: 100%;
-  // height: auto;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  & + .card-one {
-    margin-top: 20px;
+
+.news {
+  .row {
+    display: flex;
+    justify-content: space-between;
   }
-  p {
-    padding: 0;
-    background-color: aliceblue;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    color: var(--text-primary);
-    font-weight: bold;
+  .row-1,
+  .row-2 {
+    &-item {
+      flex: 0 0 48%;
+    }
+  }
+  .row-2 {
+    margin-top: 40px;
+  }
+  .row-2-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .card-two {
+    flex: 0 0 46%;
+  }
+  .more-btn {
+    margin-top: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
+.free-general,
+.config {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.free-general {
+  .chams {
+    width: var(--max-w-app);
+  }
+}
+
+.config {
+  padding-bottom: 60px;
+  &-title {
+    padding-top: 8px;
+  }
+  &-content {
+    width: var(--max-w-app);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .notice {
+    color: var(--white);
+    max-width: 770px;
+    font-size: 1.4rem;
+    text-align: center;
+  }
+  .tables {
+    margin-top: 16px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .table-1,
+  .table-2 {
+    flex: 0 0 49%;
+    color: var(--white);
+    display: flex;
+    border: 1px solid #ae903b;
+    min-height: 200px;
+    .device {
+      text-transform: capitalize;
+      padding: 12px 20px;
+      border-right: 1px solid #ae903b;
+      min-width: 100px;
+      text-align: center;
+    }
+    .need {
+      padding: 12px 20px;
+      text-transform: uppercase;
+      flex: 1;
+    }
+    ul li {
+      text-transform: none;
+      margin-left: 16px;
+      font-size: 1.6rem;
+    }
   }
 }

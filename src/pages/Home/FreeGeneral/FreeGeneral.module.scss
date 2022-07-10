@@ -1,3 +1,6 @@
+$btn-w: 145px;
+$btn-left: 8px;
+
 .wrapper {
   width: 100%;
   position: relative;
@@ -13,7 +16,33 @@
 .bg {
   animation: visible 1s ease 1s;
 }
+.avatar-btn {
+  position: absolute;
+  left: 0;
+  top: 0;
+  &-0 {
+  }
+  &-1 {
+    left: $btn-w;
+  }
+  &-2 {
+    top: $btn-w;
+    top: $btn-w - 20px;
 
+    left: 72.5px;
+  }
+  &-3 {
+    top: $btn-w - 20px;
+    left: $btn-w + 72.5px;
+  }
+  &-4 {
+    top: 2 * ($btn-w - 20px);
+  }
+  &-5 {
+    top: 2 * ($btn-w - 20px);
+    left: $btn-w;
+  }
+}
 @keyframes visible {
   from {
     visibility: hidden;

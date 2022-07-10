@@ -5,9 +5,14 @@ import styles from "./Avatar.module.scss";
 const cx = classNames.bind(styles);
 const border = "https://lienquan.garena.vn/asset/images/tab-default-hv.png";
 
-function Avatar({ src, onClick }) {
+function Avatar({ src, onClick, className }) {
   return (
-    <div className={cx("wrapper")} onClick={onClick}>
+    <div
+      className={cx("wrapper", {
+        [className]: className,
+      })}
+      onClick={onClick}
+    >
       <img src={border} className={cx("border")} />
       <img src={src} className={cx("avatar")} />
     </div>
