@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 const instance = axios.create({
-  // baseURL: process.env.REACT_APP_API,
-  baseURL: process.env.REACT_APP_LOCAL_API,
+  baseURL: process.env.REACT_APP_API,
+  // baseURL: process.env.REACT_APP_LOCAL_API,
 });
 
 const useRequest = (method, url, option) => {
