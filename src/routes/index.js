@@ -1,6 +1,7 @@
 //pages
 import Home from "~/pages/Home";
 import Other from "~/pages/Other";
+import GiftCode from "~/pages/GiftCode";
 import routesConfig from "~/configs/routes";
 
 //layout
@@ -17,6 +18,12 @@ const publicRoutes = [
   { path: routesConfig.tournaments, component: Other, layout: OtherLayout },
   { path: routesConfig.cooperation, component: Other, layout: OtherLayout },
   //
+  { path: routesConfig.introduce, component: Fragment, layout: OtherLayout },
+  {
+    path: routesConfig.giftcode,
+    component: GiftCode,
+    layout: Fragment,
+  },
 ];
 const privateRoutes = {};
 export { publicRoutes, privateRoutes };

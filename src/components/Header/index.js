@@ -19,7 +19,7 @@ const navLeft = [
   {
     name: "học viện",
     // url: routesConfig.introduce,
-    url: "/",
+    url: routesConfig.introduce,
   },
 ];
 
@@ -30,11 +30,12 @@ const navRight = [
   },
   {
     name: "tài khoản",
-    url: "/",
+    url: "/x",
   },
   {
     name: "hợp tác",
-    url: "/",
+    // url: "/y",
+    url: routesConfig.giftcode,
   },
 ];
 function HeaderOne() {

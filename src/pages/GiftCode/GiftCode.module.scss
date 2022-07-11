@@ -1,0 +1,33 @@
+.wrapper {
+  background-color: var(--primary);
+}
+.content {
+  //   background-color: aliceblue;
+  padding: 36px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  input {
+    font-size: 1.8rem;
+    border: none;
+    width: 340px;
+    height: 40px;
+    background-color: var(--white);
+    padding: 8px;
+  }
+  .btn {
+    margin-top: 16px;
+    cursor: pointer;
+    width: 140px;
+    height: 36px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .notice {
+    margin-top: 12px;
+    color: var(--white);
+    font-size: 0.96rem;
+  }
+}
