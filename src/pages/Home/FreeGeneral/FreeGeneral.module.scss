@@ -1,9 +1,51 @@
+@import "../../../global/mediaQuery.scss";
 $btn-w: 145px;
 $btn-left: 8px;
 
 .wrapper {
   width: 100%;
   position: relative;
+  @mixin tablet_mobile {
+    $btn-w: 65px;
+
+    .avatar-btn {
+      width: 65px;
+      height: 65px;
+
+      img {
+        width: 60px;
+        // height: 60px;
+      }
+      &-0 {
+      }
+      &-1 {
+        left: $btn-w;
+      }
+      &-2 {
+        top: $btn-w;
+        top: $btn-w - 2px;
+
+        left: 32.5px;
+      }
+      &-3 {
+        top: $btn-w - 2px;
+        left: $btn-w + 32.5px;
+      }
+      &-4 {
+        top: 2 * ($btn-w - 2px);
+      }
+      &-5 {
+        top: 2 * ($btn-w - 2px);
+        left: $btn-w;
+      }
+    }
+  }
+  @include tablet {
+    @include tablet_mobile;
+  }
+  @include mobile {
+    @include tablet_mobile;
+  }
 }
 .select {
   position: absolute;

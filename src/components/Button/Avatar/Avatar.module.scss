@@ -2,11 +2,9 @@
   position: relative;
   width: 145px;
   height: 145px;
-  // background-color: bisque !important ;
   cursor: pointer;
   &:hover .border {
     z-index: var(--z-low);
-    // display: block;
   }
 }
 

@@ -29,7 +29,6 @@ function Other() {
   };
   useEffect(() => {
     if (res) {
-      // console.log(res);
       if (limit < res.length) {
         setData(res.slice(0, limit - 1));
       } else {
@@ -55,21 +54,25 @@ function Other() {
           {menu.map((item, index) => {
             if (pathname === item.path)
               return (
-                <div className={cx("menu-item")} key={index}>
-                  <ButtonPrimary url={item.link} active>
-                    {item.name}
-                  </ButtonPrimary>
-                </div>
+                <ButtonPrimary
+                  url={item.link}
+                  className={cx("menu-item")}
+                  active
+                  key={index}
+                >
+                  {item.name}
+                </ButtonPrimary>
               );
             return (
               <div
-                className={cx("menu-item")}
                 key={index}
                 onClick={() => {
                   setLimit(7);
                 }}
               >
-                <ButtonPrimary url={item.link}>{item.name}</ButtonPrimary>
+                <ButtonPrimary url={item.link} className={cx("menu-item")}>
+                  {item.name}
+                </ButtonPrimary>
               </div>
             );
           })}
@@ -82,15 +85,17 @@ function Other() {
           data.map((item, index) => {
             return (
               <Fragment key={index}>
-                <PostCard data={item} />
-                <Separator />
+                <PostCard data={item} className={cx("post-card")} />
+                <Separator className={cx("se-line")} />
               </Fragment>
             );
           })
         )}
       </div>
       <div className={cx("btn-wrapper")}>
-        {res && limit < res.length && <ButtonMore onClick={handleMore} />}
+        {res && limit < res.length && (
+          <ButtonMore onClick={handleMore} className={cx("more-btn")} />
+        )}
       </div>
     </div>
   );

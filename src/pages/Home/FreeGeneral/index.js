@@ -12,7 +12,6 @@ function FreeGeneral({ data }) {
   useEffect(() => {
     setCurrentBg(data[0].img);
   }, [data]);
-  console.log(1);
   return (
     <div className={cx("wrapper")}>
       <Image src={currentBg} className={cx("bg")} />

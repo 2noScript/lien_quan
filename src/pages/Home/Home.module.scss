@@ -6,30 +6,44 @@ $border-color: var(--gold);
   display: flex;
   align-items: center;
   flex-direction: column;
-
-  @include mobile {
-  }
-  @include tablet {
+  @mixin tablet_mobile {
     .title {
       font-size: 1.6rem;
     }
     .news {
       .news-content {
-        width: 100%;
+        width: 100vw;
       }
       .row-1 {
         flex-direction: column;
-        width: 100%;
+        align-items: center;
+        width: 100vw;
         .card-one {
-          width: 100%;
+          width: calc(100% - 40px);
+          & + .card-one {
+            margin-top: 20px;
+          }
         }
       }
       .row-2 {
-        display: none;
+        margin-top: 20px;
+        flex-direction: column;
+        &-item {
+          padding: 0 20px;
+          & + .row-2-item {
+            margin-top: 20px;
+          }
+        }
+        .card-two {
+          flex: 0 0 48%;
+        }
       }
     }
     .free-general {
-      display: none;
+      // display: none;
+      .chams {
+        width: auto;
+      }
     }
     .config {
       display: none;
@@ -37,6 +51,12 @@ $border-color: var(--gold);
     .more-btn {
       display: none !important;
     }
+  }
+  @include mobile {
+    @include tablet_mobile;
+  }
+  @include tablet {
+    @include tablet_mobile;
   }
   @include laptop {
     .news {

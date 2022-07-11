@@ -1,10 +1,44 @@
+@import "../../global/mediaQuery.scss";
 .wrapper {
   height: 180px;
   display: flex;
   align-items: center;
-  width: 1200px;
   padding: 0 16px;
-  // background-color: antiquewhite;
+  width: 100%;
+  // background-color: rebeccapurple;
+  @mixin tablet_mobile {
+    flex-direction: column;
+    width: 100vw;
+    height: auto;
+    .img {
+      width: 100% !important;
+      height: auto !important;
+    }
+    .content {
+      width: 100%;
+      flex: none;
+      padding: 0;
+    }
+    .title {
+      padding: 4px 16px;
+      font-size: 1.4rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      background-color: #1e192f;
+      // background-color: aliceblue;
+    }
+    .date,
+    .description {
+      display: none;
+    }
+  }
+  @include tablet {
+    @include tablet_mobile;
+  }
+  @include mobile {
+    @include tablet_mobile;
+  }
 }
 .img {
   border: 1px solid #ae903b;

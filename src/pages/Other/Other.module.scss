@@ -1,11 +1,57 @@
-// $padding-left-right: 174px;
+@import "../../global/mediaQuery.scss";
 $min-w-menu: 750px;
+
 .wrapper {
   border-top: 2px solid #ae903b;
   display: flex;
   align-items: center;
   flex-direction: column;
+  @include laptop {
+    .content {
+      width: auto;
+      max-width: var(--max-w-app);
+    }
+  }
+  @mixin tablet_mobile {
+    margin-top: 10px;
+    .content {
+      width: auto;
+    }
+    .w-menu {
+      width: 80px;
+      z-index: var(--z-hight);
+      padding: 0;
+      position: fixed;
+      right: 20px;
+
+      .menu-active.menu {
+        display: flex;
+      }
+    }
+    .menu {
+      min-width: auto;
+      flex-direction: column;
+    }
+    .menu-item {
+      font-size: 1.4rem;
+      width: 90px;
+      height: auto;
+    }
+    .more-btn {
+      font-size: 1.6rem;
+    }
+    .se-line {
+      height: 16px;
+    }
+  }
+  @include tablet {
+    @include tablet_mobile;
+  }
+  @include mobile {
+    @include tablet_mobile;
+  }
 }
+
 .w-menu {
   width: 100%;
   display: flex;
@@ -19,15 +65,13 @@ $min-w-menu: 750px;
   justify-content: space-between;
   align-items: center;
   min-width: $min-w-menu;
-  width: $min-w-menu;
 }
 .content {
-  max-width: var(--max-w-app);
+  width: var(--max-w-app);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  // display: none; //fix
 }
 .btn-wrapper {
   height: 40px;
